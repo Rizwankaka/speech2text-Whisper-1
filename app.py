@@ -87,3 +87,40 @@ sidebar_background_image = '''
 '''
 
 st.sidebar.markdown(sidebar_background_image, unsafe_allow_html=True)
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
+# Custom CSS to inject into the Streamlit app
+footer_css = """
+<style>
+.footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    background-color: transparent;
+    color: black;
+    text-align: right;
+    padding-right: 10px;
+}
+</style>
+"""
+
+# HTML for the footer - replace your credit information here
+footer_html = f"""
+<div class="footer">
+    <p>Credit: Dr. Aammar Tufail | Phd | Data Scientist | Bioinformatician (<a href="https://www.youtube.com/@Codanics" target="_blank">CODANICS</a>)</p>
+</div>
+"""
+
+# Combine CSS and HTML for the footer
+st.markdown(footer_css, unsafe_allow_html=True)
+st.markdown(footer_html, unsafe_allow_html=True)
+
+#st.info('Credit: Dr. Aammar Tufail Phd | Data Scientist | Bioinformatician ( [codanics](https://www.youtube.com/@Codanics))')
